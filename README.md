@@ -1,68 +1,64 @@
-# 📄 Resume Generator
+# :eyes: Show Me - 个人简历创建生成项目
 
-Resume Generator 是一个前后端分离的现代化个人简历创建生成项目。前端基于 Vue3、Pinia、Vite，后端基于 SpringBoot 开发。它可以帮助你快速生成各种风格的简历。
+Show Me是一个前后端分离的个人简历创建生成项目。前端基于Vue3、Pinia、Vite，后端基于SpringBoot。该项目旨在帮助用户快速生成不同风格的个人简历。
 
-## 功能特点
+## :rocket: 快速开始
 
-- 支持多种简历模板
-- 可以导出 PDF 或 HTML 格式的简历
-- 支持云端存储简历数据
-- 支持多语言切换
+1. 克隆该仓库
 
-## 技术栈
+   ```bash
+   git clone https://github.com/{your-username}/show-me.git
+   ```
 
-### 前端
+2. 进入项目目录
 
-- Vue3：一套用于构建用户界面的渐进式框架。
-- Pinia：Vue3 状态管理库，具有更好的类型推导和更少的代码量。
-- Vite：下一代前端构建工具。
+   ```bash
+   cd show-me
+   ```
 
-### 后端
+3. 启动前端
 
-- SpringBoot：基于 Spring 框架快速开发企业级应用的工具。
-- MyBatis：持久层框架。
-- MySQL：关系型数据库管理系统。
+   ```bash
+   cd frontend
+   npm install # 安装依赖
+   npm run dev # 启动开发服务器
+   ```
 
-## 开始使用
+4. 启动后端
 
-### 准备工作
+   ```bash
+   cd backend
+   mvn clean package # 打包
+   java -jar target/show-me.jar # 启动服务器
+   ```
 
-确保你已经安装了以下软件：
+5. 访问网站
 
-- Node.js
-- JDK8+
-- MySQL
+   在浏览器中访问 http://localhost:3000 即可查看网站。
 
-### 克隆项目
+## :art: 网站特色
 
-```bash
-git clone https://github.com/username/resume-generator.git
-```
+- 基于Vue3、Pinia、Vite，前端性能优异。
+- 基于SpringBoot，后端安全可靠。
+- 提供多种不同风格的简历模板，满足用户不同需求。
+- 支持在线编辑和导出PDF，方便用户使用。
+- 界面美观，使用简单。
 
-### 前端
+## :hammer_and_wrench: 技术栈
 
-进入 `resume-generator/frontend` 目录，安装依赖并启动项目：
+- 前端：Vue3、Pinia、Vite、Element Plus、Axios、html2canvas、jspdf
+- 后端：SpringBoot、MyBatis、MySQL、JWT、Swagger
 
-```bash
-cd resume-generator/frontend
-npm install
-npm run dev
-```
+## :busts_in_silhouette: 贡献指南
 
-### 后端
+欢迎各位开发者贡献代码。如果您想为该项目做出贡献，请按照以下步骤：
 
-进入 `resume-generator/backend` 目录，导入数据库并启动项目：
+1. Fork 该仓库
+2. 创建一个新的分支（`git checkout -b feature/your-feature-name`）
+3. 提交您的修改（`git commit -am 'Add some feature'`）
+4. 推送您的分支（`git push origin feature/your-feature-name`）
+5. 创建一个新的 Pull Request
 
-```bash
-cd resume-generator/backend
-mysql -u root -p < resume_generator.sql
-./mvnw spring-boot:run
-```
+## :page_facing_up: 许可证
 
-### 访问项目
-
-打开浏览器访问 `http://localhost:3000` 即可开始使用。
-
-## 贡献代码
-
-欢迎提出 issue 或 pull request。
+该项目使用 MIT 许可证。了解更多信息，请查看 [LICENSE](https://github.com/{your-username}/show-me/blob/main/LICENSE) 文件。
