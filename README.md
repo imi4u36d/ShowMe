@@ -61,4 +61,4 @@ Show Me是一个前后端分离的个人简历创建生成项目。前端基于V
 
 ## :page_facing_up: 许可证
 
-该项目使用 MIT 许可证。了解更多信息，请查看 [LICENSE](https://github.com/{your-username}/show-me/blob/main/LICENSE) 文件。
+该项目使用 Apache License 2.0 许可证。了解更多信息，请查看 [LICENSE](https://github.com/{your-username}/show-me/blob/main/LICENSE) 文件。
