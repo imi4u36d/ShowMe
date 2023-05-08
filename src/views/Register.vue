@@ -92,6 +92,10 @@ const doRegister = async () => {
     outline: none;
 }
 
+.register-input input:focus {
+    border: 1px solid #000;
+}
+
 .register-error {
     color: red;
     font-size: 12px;

@@ -9,7 +9,7 @@
             </div>
             <div class="login-error">{{ error }}</div>
             <div class="login-btn">
-                <button @click="doLogin">登陆</button>
+                <el-button @click="doLogin" :loading="loading">登陆</el-button>
                 <router-link to="/register">去注册</router-link>
             </div>
         </div>
@@ -17,27 +17,40 @@
 </template>
 
 <script setup lang="ts">
-import {defineAsyncComponent, ref} from 'vue'
+import {ref} from 'vue'
 import {userStore} from '@/stores/userStore'
 import {useRouter} from 'vue-router'
 import {login} from '@/request/api'
+import {ElMessage} from 'element-plus'
+import {sleep} from '@/utils/timeUtils'
 
 const store = userStore()
 const router = useRouter()
 const username = ref('')
 const password = ref('')
 const error = ref('')
+const loading = ref(false)
 
 
 const doLogin = async () => {
+    loading.value = true
+    await sleep(1000)
     login({username: username.value, password: password.value}).then(res => {
         if (res["retCode"] == 0) {
-            store.setuserInfo({id: 1, username: username.value})
+            ElMessage({
+                message: '登陆成功',
+                type: 'success',
+            })
+            store.setuserInfo({id: res.data.id, userName: res.data.userName})
             router.push('/')
         } else {
-            alert("用户名或密码错误")
+            ElMessage({
+                message: '用户名或密码错误',
+                type: 'error',
+            })
         }
     })
+    loading.value = false
 }
 </script>
 
@@ -85,6 +98,10 @@ const doLogin = async () => {
     border-radius: 5px;
     padding: 0 10px;
     outline: none;
+}
+
+.login-input input:focus {
+    border: 1px solid #000;
 }
 
 .login-error {

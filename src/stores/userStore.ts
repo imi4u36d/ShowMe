@@ -5,7 +5,7 @@ export const userStore = defineStore(('login'), {
   // other options...
   state: () => ({
     id: 0,
-    userName: ''
+    userName: '未登陆'
   }),
   getters: {
     // getters...
