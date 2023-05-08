@@ -31,14 +31,13 @@ const error = ref('')
 
 const doLogin = async () => {
     login({username: username.value, password: password.value}).then(res => {
-        console.log(res)
+        if (res["retCode"] == 0) {
+            store.setuserInfo({id: 1, username: username.value})
+            router.push('/')
+        } else {
+            alert("用户名或密码错误")
+        }
     })
-    try {
-        await store.setuserInfo({id: 1, username: username.value})
-        router.push('/')
-    } catch (err) {
-        console.log(err);
-    }
 }
 </script>
 
