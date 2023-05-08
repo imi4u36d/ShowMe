@@ -1,40 +1,68 @@
-# ShowMe
+# 📄 Resume Generator
 
-This template should help get you started developing with Vue 3 in Vite.
+Resume Generator 是一个前后端分离的现代化个人简历创建生成项目。前端基于 Vue3、Pinia、Vite，后端基于 SpringBoot 开发。它可以帮助你快速生成各种风格的简历。
 
-## Recommended IDE Setup
+## 功能特点
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- 支持多种简历模板
+- 可以导出 PDF 或 HTML 格式的简历
+- 支持云端存储简历数据
+- 支持多语言切换
 
-## Type Support for `.vue` Imports in TS
+## 技术栈
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+### 前端
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- Vue3：一套用于构建用户界面的渐进式框架。
+- Pinia：Vue3 状态管理库，具有更好的类型推导和更少的代码量。
+- Vite：下一代前端构建工具。
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+### 后端
 
-## Customize configuration
+- SpringBoot：基于 Spring 框架快速开发企业级应用的工具。
+- MyBatis：持久层框架。
+- MySQL：关系型数据库管理系统。
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## 开始使用
 
-## Project Setup
+### 准备工作
 
-```sh
-npm install
+确保你已经安装了以下软件：
+
+- Node.js
+- JDK8+
+- MySQL
+
+### 克隆项目
+
+```bash
+git clone https://github.com/username/resume-generator.git
 ```
 
-### Compile and Hot-Reload for Development
+### 前端
 
-```sh
+进入 `resume-generator/frontend` 目录，安装依赖并启动项目：
+
+```bash
+cd resume-generator/frontend
+npm install
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### 后端
 
-```sh
-npm run build
+进入 `resume-generator/backend` 目录，导入数据库并启动项目：
+
+```bash
+cd resume-generator/backend
+mysql -u root -p < resume_generator.sql
+./mvnw spring-boot:run
 ```
+
+### 访问项目
+
+打开浏览器访问 `http://localhost:3000` 即可开始使用。
+
+## 贡献代码
+
+欢迎提出 issue 或 pull request。
